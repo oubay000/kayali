@@ -41,11 +41,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 h1 { font-family: 'Amiri', serif; font-size: 2.8rem; font-weight: 700; line-height: 1.1; opacity: 0; animation: up 0.8s 0.3s forwards; color: #fff; }
 h1 em { font-style: italic; color: var(--gold-light); }
 
-/* HERO PHOTO */
-.hero-photo-wrap { position: relative; width: 240px; margin: 1.5rem auto; opacity: 0; animation: fadeIn 1s 0.4s forwards; z-index: 2; }
-.photo-placeholder { width: 100%; aspect-ratio: 3/4; border: 2px dashed rgba(201,169,110,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; background: rgba(201,169,110,0.05); padding: 1.5rem; border-radius: 8px; }
-.pp-icon { width: 50px; height: 50px; background: rgba(201,169,110,0.1); border: 2px solid rgba(201,169,110,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--gold); }
-.pp-text { font-size: 0.85rem; color: rgba(201,169,110,0.8); font-weight: 700; }
+/* HERO VIDEO */
+.hero-video-wrap { position: relative; width: 280px; margin: 1.5rem auto; opacity: 0; animation: fadeIn 1s 0.4s forwards; z-index: 2; }
+.hero-video-wrap video { width: 100%; aspect-ratio: 9/16; border-radius: 12px; object-fit: cover; display: block; border: 2px solid rgba(201,169,110,0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201,169,110,0.1); }
+
+/* COLOR DOT FOR SELECT */
+.color-option { display: flex; align-items: center; gap: 0.5rem; }
+.parfum-color-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-left: 4px; vertical-align: middle; }
 
 .hero-desc { font-size: 0.95rem; line-height: 1.7; color: var(--dust); margin: 0 auto 1.5rem; opacity: 0; animation: up 0.8s 0.5s forwards; font-weight: 600; padding: 0 1rem; }
 
@@ -213,9 +215,10 @@ src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
   
   <h1>عطور<br><em>كيالي</em></h1>
   
-  <div class="hero-photo-wrap">
-    <!-- REMPLACEZ LE LIEN (src="...") PAR VOTRE VRAIE PHOTO YOUCAN -->
-    <img src="https://placehold.co/800x1000/161510/C9A96E?text=Photo+Principale+Ici" alt="Kayali" style="width:100%; aspect-ratio:3/4; border-radius:8px; object-fit:cover; display:block; border: 2px solid rgba(201,169,110,0.3);">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="les pictures/kayali-video.mp4" type="video/mp4">
+    </video>
   </div>
 
   <p class="hero-desc">تيسترات أصلية 100%، مستخرجة من علب كيالي الرسمية. نفس العطر — <strong>الأكثر مبيعاً بالمغرب.</strong></p>
@@ -252,17 +255,16 @@ src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
 
   <div class="prod-grid">
 
-    <!-- PRODUCT 1 -->
+    <!-- PRODUCT 1 — PISTACHIO GELATO (GREEN) -->
     <div class="prod-card reveal">
       <div class="bestseller-badge">🏆 الأكثر مبيعاً</div>
       <div class="prod-img">
         <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <!-- REMPLACEZ LE LIEN (src="...") PAR LA PHOTO DU PARFUM DEJA VU -->
-        <img src="https://placehold.co/600x600/161510/C9A96E?text=Photo+Deja+Vu" alt="Déjà Vu White Flower" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        <img src="les pictures/kayali-pistachio-gelato.jpg" alt="Kayali Pistachio Gelato" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
       </div>
       <div class="prod-info">
-        <h3 class="prod-name">Déjà Vu White Flower</h3>
-        <p class="prod-notes">ياسمين · غاردينيا · مسك أبيض</p>
+        <h3 class="prod-name">Pistachio Gelato</h3>
+        <p class="prod-notes">فستق · كراميل · فانيليا</p>
         <div class="prod-price-area">
           <span class="old">750 درهم</span>
           <span class="new">349 درهم</span>
@@ -271,30 +273,11 @@ src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- PRODUCT 2 -->
+    <!-- PRODUCT 2 — VANILLA (YELLOW) -->
     <div class="prod-card reveal">
       <div class="prod-img">
         <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <!-- REMPLACEZ LE LIEN (src="...") PAR LA PHOTO DU PARFUM ELIXIR -->
-        <img src="https://placehold.co/600x600/161510/C9A96E?text=Photo+Elixir" alt="Elixir 11 Nuit" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
-      </div>
-      <div class="prod-info">
-        <h3 class="prod-name">Elixir 11 | Nuit</h3>
-        <p class="prod-notes">عود · عنبر · بخور</p>
-        <div class="prod-price-area">
-          <span class="old">750 درهم</span>
-          <span class="new">349 درهم</span>
-        </div>
-        <a href="#order" class="prod-btn">✦ اطلب الآن</a>
-      </div>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="prod-card reveal">
-      <div class="prod-img">
-        <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <!-- REMPLACEZ LE LIEN (src="...") PAR LA PHOTO DU PARFUM VANILLA -->
-        <img src="https://placehold.co/600x600/161510/C9A96E?text=Photo+Vanilla+28" alt="Vanilla 28" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        <img src="les pictures/kayali-vanilla.jpg" alt="Kayali Vanilla" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
       </div>
       <div class="prod-info">
         <h3 class="prod-name">Vanilla 28</h3>
@@ -307,12 +290,11 @@ src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- PRODUCT 4 -->
+    <!-- PRODUCT 3 — BURNING CHERRY (RED) -->
     <div class="prod-card reveal">
       <div class="prod-img">
         <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <!-- REMPLACEZ LE LIEN (src="...") PAR LA PHOTO DU PARFUM LOVEFEST -->
-        <img src="https://placehold.co/600x600/161510/C9A96E?text=Photo+Lovefest" alt="Lovefest Burning Cherry" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        <img src="les pictures/kayali-burning-cherry.jpg" alt="Kayali Burning Cherry" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
       </div>
       <div class="prod-info">
         <h3 class="prod-name">Lovefest Burning Cherry</h3>
@@ -385,9 +367,9 @@ src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
       <div class="form-group">
         <label for="parfum">العطر المطلوب</label>
         <select id="parfum" name="parfum" required>
-          <option value="Déjà Vu White Flower">⚪ Déjà Vu White Flower — 349 DH</option>
-          <option value="Elixir 11 Nuit">🟤 Elixir 11 Nuit — 349 DH</option>
-          <option value="Utopia Vanilla Coco">🟡 Utopia Vanilla Coco — 349 DH</option>
+          <option value="Pistachio Gelato">🟢 Pistachio Gelato — 349 DH</option>
+          <option value="Vanilla 28">🟡 Vanilla 28 — 349 DH</option>
+          <option value="Burning Cherry">🔴 Burning Cherry — 349 DH</option>
           <option value="Pack 2 parfums">🎁 Pack 2 parfums — 630 DH</option>
         </select>
       </div>
