@@ -464,26 +464,22 @@ orderForm.addEventListener('submit', function(e) {
 
   // Gather form data
   const formData = new FormData(orderForm);
-  const data = Object.fromEntries(formData.entries());
 
   // URL Webhook n8n
   const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com:5678/webhook/kayali';
 
+  // 🚨 التعديل السحري هنا: غنصيفطو الداتا مباشرة كـ Form وبدون قيود CORS
   fetch(N8N_WEBHOOK_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(data)
+    mode: 'no-cors', // هادي هي الكلمة السحرية باش التيلفون ما يبلوكيش الطلب
+    body: formData   // كنصيفطو الداتا ديريكت بلا ما نردوها JSON
   })
   .then(() => {
-    // ✅ REDICTION VERS THANKYOU.HTML UNE FOIS LES DONNÉES ENVOYÉES
+    // بما أننا استعملنا no-cors، ديما غيدوز لهاد المرحلة
     window.location.href = 'thankyou.html';
   })
   .catch((error) => {
     console.error('Erreur n8n:', error);
-    // En cas d'erreur de connexion, on redirige quand même le client pour ne pas le bloquer
     window.location.href = 'thankyou.html';
   });
 });
