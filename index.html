@@ -466,7 +466,7 @@ orderForm.addEventListener('submit', function(e) {
   const formData = new FormData(orderForm);
 
   // URL Webhook n8n
-  const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com:5678/webhook/kayali';
+  const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com/webhook/kayali';
 
   // 🚨 التعديل السحري هنا: غنصيفطو الداتا مباشرة كـ Form وبدون قيود CORS
   fetch(N8N_WEBHOOK_URL, {
