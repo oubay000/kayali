@@ -1,500 +1,1358 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>KAYALI — تيسترات أصلية | 349 درهم</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --gold: #C9A96E; --gold-light: #E8D5A3; --gold-dark: #8A6C3A;
-  --ink: #0C0B09; --ink2: #161510; --ink3: #1F1D17;
-  --dust: #F0E8DC; --mist: #8C8278;
-  --green: #3DAA6E; --green-bg: rgba(61,170,110,0.15);
-  --red-discount: #e63946;
-}
-html { scroll-behavior: smooth; }
-body { background: var(--ink); color: var(--dust); font-family: 'Cairo', sans-serif; font-weight: 400; overflow-x: hidden; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>KAYALI — تيسترات أصلية | 349 درهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* GLOWS */
-.glow-orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%); pointer-events: none; z-index: 0; }
-.glow-orb-1 { width: 350px; height: 350px; top: -50px; right: -50px; }
-.glow-orb-2 { width: 300px; height: 300px; top: 40%; left: -100px; }
+    :root {
+      --gold: #C9A96E;
+      --gold-light: #E8D5A3;
+      --gold-dark: #8A6C3A;
+      --ink: #0C0B09;
+      --ink2: #161510;
+      --ink3: #1F1D17;
+      --dust: #F0E8DC;
+      --mist: #8C8278;
+      --green: #3DAA6E;
+      --green-bg: rgba(61, 170, 110, 0.15);
+      --red-discount: #e63946;
+    }
 
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; transition: all 0.5s; background: rgba(12,11,9,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,169,110,0.15); box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
-.logo { display: flex; flex-direction: column; text-decoration: none; align-items: flex-start; }
-.logo-main { font-family: 'Amiri', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); line-height: 1; }
-.logo-sub { font-size: 0.55rem; color: #fff; letter-spacing: 0.15em; font-family: 'Cairo', sans-serif; margin-top: 0.15rem; background: var(--gold-dark); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-.nav-cta { padding: 0.5rem 1rem; border: 1px solid var(--gold); color: var(--ink); background: var(--gold); font-size: 0.75rem; font-weight: 700; text-decoration: none; border-radius: 3px; box-shadow: 0 2px 10px rgba(201,169,110,0.3); }
+    body {
+      background: var(--ink);
+      color: var(--dust);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
 
-/* HERO - MOBILE OPTIMIZED */
-.hero { padding: 6.5rem 5vw 3rem; position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    /* GLOWS */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.eyebrow { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; opacity: 0; animation: up 0.8s 0.2s forwards; }
-.tester-badge { background: rgba(201,169,110,0.15); border: 1px solid rgba(201,169,110,0.4); color: var(--gold-light); font-size: 0.75rem; padding: 0.3rem 0.6rem; font-weight: 600; border-radius: 3px; }
-.urgency-tag { background: rgba(230, 57, 70, 0.1); border: 1px solid rgba(230, 57, 70, 0.3); color: #ff6b6b; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 3px; animation: pulse-red 2s infinite; }
+    .glow-orb-1 {
+      width: 350px;
+      height: 350px;
+      top: -50px;
+      right: -50px;
+    }
 
-h1 { font-family: 'Amiri', serif; font-size: 2.8rem; font-weight: 700; line-height: 1.1; opacity: 0; animation: up 0.8s 0.3s forwards; color: #fff; }
-h1 em { font-style: italic; color: var(--gold-light); }
+    .glow-orb-2 {
+      width: 300px;
+      height: 300px;
+      top: 40%;
+      left: -100px;
+    }
 
-/* HERO VIDEO */
-.hero-video-wrap { position: relative; width: 280px; margin: 1.5rem auto; opacity: 0; animation: fadeIn 1s 0.4s forwards; z-index: 2; }
-.hero-video-wrap video { width: 100%; aspect-ratio: 9/16; border-radius: 12px; object-fit: cover; display: block; border: 2px solid rgba(201,169,110,0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201,169,110,0.1); }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5vw;
+      transition: all 0.5s;
+      background: rgba(12, 11, 9, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
 
-/* COLOR DOT FOR SELECT */
-.color-option { display: flex; align-items: center; gap: 0.5rem; }
-.parfum-color-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-left: 4px; vertical-align: middle; }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      align-items: flex-start;
+    }
 
-.hero-desc { font-size: 0.95rem; line-height: 1.7; color: var(--dust); margin: 0 auto 1.5rem; opacity: 0; animation: up 0.8s 0.5s forwards; font-weight: 600; padding: 0 1rem; }
+    .logo-main {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      line-height: 1;
+    }
 
-/* PRICE */
-.hero-price-wrap { opacity: 0; animation: up 0.8s 0.6s forwards; background: rgba(201,169,110,0.05); padding: 1.2rem; border-radius: 8px; border: 1px solid rgba(201,169,110,0.2); width: 100%; margin-bottom: 1.5rem; }
-.hero-price-old { font-size: 1.1rem; color: var(--mist); text-decoration: line-through; margin-bottom: 0.3rem; font-family: 'Cairo', sans-serif; font-weight: 600; }
-.hero-price-flex { display: flex; align-items: center; justify-content: center; gap: 1rem; }
-.hero-price { font-family: 'Amiri', serif; font-size: 3.2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
-.discount-badge { background: var(--gold); color: var(--ink); font-size: 1rem; font-weight: 800; padding: 0.3rem 0.6rem; border-radius: 4px; }
-.hero-delivery-txt { color: var(--green); font-size: 0.85rem; font-weight: 700; margin-top: 0.8rem; }
+    .logo-sub {
+      font-size: 0.55rem;
+      color: #fff;
+      letter-spacing: 0.15em;
+      font-family: 'Cairo', sans-serif;
+      margin-top: 0.15rem;
+      background: var(--gold-dark);
+      padding: 0.1rem 0.3rem;
+      border-radius: 2px;
+    }
 
-/* CTA */
-.btn-buy { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--ink); font-family: 'Cairo', sans-serif; font-size: 1.15rem; font-weight: 800; text-decoration: none; border-radius: 5px; box-shadow: 0 8px 25px rgba(201,169,110, 0.4); text-align: center; width: 100%; padding: 1rem; animation: pulse 2s infinite; }
-.btn-buy::after { content: ''; position: absolute; top:0; left:-100%; width:50%; height:100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); animation: shine 3s infinite; }
-.trust-micro { font-size: 0.8rem; color: var(--mist); font-weight: 600; margin-top: 0.8rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem; }
-.trust-micro span { color: var(--gold-light); font-size: 0.9rem; }
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--gold);
+      color: var(--ink);
+      background: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 3px;
+      box-shadow: 0 2px 10px rgba(201, 169, 110, 0.3);
+    }
 
-/* PROOF BAR (GRID FOR MOBILE) */
-.proof-bar { background: var(--ink2); border-top: 1px solid rgba(201,169,110,0.15); border-bottom: 1px solid rgba(201,169,110,0.15); padding: 1.5rem 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; position: relative; z-index: 5; box-shadow: 0 5px 20px rgba(0,0,0,0.4); }
-.proof-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.4rem; font-size: 0.8rem; color: #fff; font-weight: 600; }
-.pi-icon { background: var(--gold); color: var(--ink); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; margin-bottom: 0.2rem; }
-.proof-green { color: var(--green); }
-.proof-green .pi-icon { background: var(--green); color: #fff; }
+    /* HERO - MOBILE OPTIMIZED */
+    .hero {
+      padding: 6.5rem 5vw 3rem;
+      position: relative;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-/* SECTION GLOBAL */
-section { padding: 4rem 5vw; position: relative; z-index: 2; }
-.s-label { font-size: 0.85rem; color: var(--gold); margin-bottom: 0.6rem; display: inline-block; font-weight: 700; background: rgba(201,169,110,0.1); padding: 0.3rem 0.6rem; border-radius: 3px; text-align: center; width: 100%; }
-.s-title { font-family: 'Amiri', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.15; color: #fff; text-align: center; }
-.s-title em { font-style: italic; color: var(--gold-light); font-weight: 400; }
-hr.divider { border: none; height: 2px; width: 50px; background: var(--gold); margin: 1.2rem auto; }
+    .eyebrow {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: up 0.8s 0.2s forwards;
+    }
 
-/* PRODUCTS */
-.products { background: var(--ink2); }
-.products-header { margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; }
-.stock-warning { background: rgba(230, 57, 70, 0.15); color: #ff6b6b; padding: 0.4rem 0.8rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(230, 57, 70, 0.3); margin-top: 1rem; width: 100%; text-align: center; }
-.prod-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-.prod-card { background: var(--ink3); border: 1px solid rgba(201,169,110,0.2); border-radius: 8px; position: relative; overflow: hidden; }
+    .tester-badge {
+      background: rgba(201, 169, 110, 0.15);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      font-weight: 600;
+      border-radius: 3px;
+    }
 
-.prod-img { aspect-ratio: 1; border-bottom: 1px solid rgba(201,169,110,0.1); }
-.bestseller-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: #e63946; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 3px; z-index: 10; font-family: 'Cairo', sans-serif;}
-.prod-tester-tag { position: absolute; top: 0.8rem; left: 0.8rem; background: var(--gold); color: var(--ink); font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; z-index: 10; border-radius: 3px; }
+    .urgency-tag {
+      background: rgba(230, 57, 70, 0.1);
+      border: 1px solid rgba(230, 57, 70, 0.3);
+      color: #ff6b6b;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      animation: pulse-red 2s infinite;
+    }
 
-.prod-info { padding: 1.2rem; text-align: center; }
-.prod-name { font-family: 'Amiri', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.2rem; color: #fff; }
-.prod-notes { font-size: 0.85rem; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+    h1 {
+      font-family: 'Amiri', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      opacity: 0;
+      animation: up 0.8s 0.3s forwards;
+      color: #fff;
+    }
 
-.prod-price-area { display: flex; justify-content: center; align-items: center; gap: 0.8rem; margin-bottom: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 4px; border: 1px solid rgba(201,169,110,0.1); }
-.prod-price-area .old { font-size: 0.9rem; color: var(--mist); text-decoration: line-through; }
-.prod-price-area .new { font-family: 'Amiri', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold-light); }
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
 
-.prod-btn { font-size: 1rem; color: var(--ink); background: var(--gold); border: none; padding: 0.8rem; border-radius: 4px; text-decoration: none; text-align: center; font-weight: 800; display: block; width: 100%; box-shadow: 0 4px 15px rgba(201,169,110,0.2); }
+    /* HERO VIDEO */
+    .hero-video-wrap {
+      position: relative;
+      width: 280px;
+      margin: 1.5rem auto;
+      opacity: 0;
+      animation: fadeIn 1s 0.4s forwards;
+      z-index: 2;
+    }
 
-/* TESTER EXPLAIN */
-.tester-section { background: rgba(201,169,110,0.03); border-top: 1px solid rgba(201,169,110,0.1); border-bottom: 1px solid rgba(201,169,110,0.1); }
-.tester-points { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-.tester-point { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; background: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
-.tp-icon { background: var(--gold); color: var(--ink); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; }
-.tp-body strong { font-size: 1rem; font-weight: 700; color: var(--gold-light); display: block; margin-bottom: 0.3rem;}
-.tp-body span { color: var(--dust); font-size: 0.85rem; }
+    .hero-video-wrap video {
+      width: 100%;
+      aspect-ratio: 9/16;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      border: 2px solid rgba(201, 169, 110, 0.3);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 169, 110, 0.1);
+    }
 
-/* ORDER FORM */
-.order-section { background: var(--ink); border-top: 1px solid rgba(201,169,110,0.2); padding-bottom: 7rem; }
-.order-left { text-align: center; margin-bottom: 2.5rem; }
-.order-left p { color: var(--dust); line-height: 1.6; font-size: 1rem; margin-top: 1rem; font-weight: 600; padding: 0 1rem; }
+    /* COLOR DOT FOR SELECT */
+    .color-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-.guarantee-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,169,110,0.2); padding: 1.2rem 1rem; border-radius: 8px; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; text-align: right; }
-.guarantee { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; color: #fff; font-weight: 600; }
-.g-icon { font-size: 1.2rem; flex-shrink: 0; background: rgba(201,169,110,0.1); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--gold); }
-.g-green .g-icon { background: rgba(61,170,110,0.15); color: var(--green); }
+    .parfum-color-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
 
-.order-form { background: rgba(31, 29, 23, 1); border: 2px solid var(--gold); padding: 2rem 1.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(201,169,110,0.1); }
-.form-title { font-family: 'Amiri', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center; color: #fff; line-height: 1.2;}
-.form-subtitle { font-size: 0.85rem; color: var(--mist); margin-bottom: 1.5rem; text-align: center; font-weight: 600; }
-.form-group { margin-bottom: 1.2rem; }
-label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; }
-input, select { width: 100%; padding: 0.9rem 1rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(201,169,110,0.3); color: #fff; font-family: 'Cairo', sans-serif; font-size: 1rem; border-radius: 4px; outline: none; appearance: none; }
-input:focus, select:focus { border-color: var(--gold); background: rgba(0,0,0,0.6); }
-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23C9A96E' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 1rem center; padding-left: 2.5rem; }
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--dust);
+      margin: 0 auto 1.5rem;
+      opacity: 0;
+      animation: up 0.8s 0.5s forwards;
+      font-weight: 600;
+      padding: 0 1rem;
+    }
 
-.price-row { padding: 1.2rem 0; border-top: 1px solid rgba(201,169,110,0.2); border-bottom: 1px solid rgba(201,169,110,0.2); margin: 1.5rem 0; }
-.price-main-row { display: flex; justify-content: space-between; align-items: center; }
-.price-label { font-size: 1rem; font-weight: 700; color: #fff; }
-.price-amount { font-family: 'Amiri', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-light); display: flex; flex-direction: column; align-items: flex-end; line-height: 1; }
-.price-old { font-size: 1rem; color: var(--mist); text-decoration: line-through; font-family: 'Cairo', sans-serif;}
-.price-ship-row { display: flex; justify-content: space-between; margin-top: 0.8rem; font-size: 0.9rem; }
-.price-ship-label { color: var(--mist); font-weight: 600; }
-.price-ship-val { color: var(--green); font-weight: 800; background: rgba(61,170,110,0.15); padding: 0.2rem 0.5rem; border-radius: 3px;}
+    /* PRICE */
+    .hero-price-wrap {
+      opacity: 0;
+      animation: up 0.8s 0.6s forwards;
+      background: rgba(201, 169, 110, 0.05);
+      padding: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
 
-.btn-submit { width: 100%; padding: 1.1rem; background: var(--gold); color: var(--ink); font-family: 'Cairo', sans-serif; font-size: 1.2rem; font-weight: 800; border: none; border-radius: 5px; box-shadow: 0 8px 20px rgba(201,169,110,0.4); animation: pulse 2s infinite; }
-.form-secure { text-align: center; margin-top: 1.2rem; font-size: 0.8rem; color: var(--mist); font-weight: 600; }
+    .hero-price-old {
+      font-size: 1.1rem;
+      color: var(--mist);
+      text-decoration: line-through;
+      margin-bottom: 0.3rem;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+    }
 
-/* STICKY BAR FOR MOBILE */
-.sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--ink2); border-top: 2px solid var(--gold); padding: 0.8rem 5vw; display: flex; justify-content: space-between; align-items: center; transform: translateY(100%); transition: transform 0.4s; box-shadow: 0 -5px 20px rgba(0,0,0,0.6); }
-.sticky-bar.visible { transform: translateY(0); }
-.sticky-left { display: flex; flex-direction: column; }
-.sticky-name { font-family: 'Amiri', serif; font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
-.sticky-price { font-size: 1.1rem; color: var(--gold-light); font-weight: 800; display:flex; align-items:center; gap: 0.4rem; }
-.sticky-price span { font-size: 0.75rem; text-decoration: line-through; color: var(--mist); font-weight: 600;}
-.sticky-buy { padding: 0.8rem 1.5rem; background: var(--gold); color: var(--ink); font-size: 1rem; font-weight: 800; text-decoration: none; border-radius: 4px; animation: pulse 2s infinite; white-space: nowrap; }
+    .hero-price-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-/* WHATSAPP FLOAT BUTTON */
-.whatsapp-float { position: fixed; bottom: 85px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; animation: pulse-wa 2s infinite; }
-.whatsapp-float svg { width: 32px; height: 32px; }
+    .hero-price {
+      font-family: 'Amiri', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
 
-/* FOOTER */
-footer { background: #000; padding: 2.5rem 5vw 6rem; text-align: center; }
-.footer-logo { font-family: 'Amiri', serif; font-size: 1.8rem; font-weight: 800; color: var(--gold-dark); margin-bottom: 1.5rem;}
-.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
-.footer-links a { font-size: 0.9rem; color: var(--mist); text-decoration: none; font-weight: 600; }
-.footer-copy { font-size: 0.8rem; color: var(--mist); opacity: 0.5; }
+    .discount-badge {
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
 
-/* ANIMATIONS */
-@keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,169,110, 0.5); } 70% { box-shadow: 0 0 0 10px rgba(201,169,110, 0); } 100% { box-shadow: 0 0 0 0 rgba(201,169,110, 0); } }
-@keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4); } 70% { box-shadow: 0 0 0 8px rgba(230, 57, 70, 0); } 100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); } }
-@keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-@keyframes shine { 100% { left: 200%; } }
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-</style>
+    .hero-delivery-txt {
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.8rem;
+    }
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2056261018495811');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', {
-  content_name: 'Kayali Testeur Original',
-  value: 349,
-  currency: 'MAD'
-});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</head>
-<body>
+    /* CTA */
+    .btn-buy {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 8px 25px rgba(201, 169, 110, 0.4);
+      text-align: center;
+      width: 100%;
+      padding: 1rem;
+      animation: pulse 2s infinite;
+    }
 
-<div class="glow-orb glow-orb-1"></div>
+    .btn-buy::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3s infinite;
+    }
 
-<!-- NAVBAR -->
-<nav id="nav">
-  <div class="logo">
-    <span class="logo-main">KAYALI</span>
-    <span class="logo-sub">TESTERS</span>
-  </div>
-  <a href="#order" class="nav-cta">اطلب — 349 درهم</a>
-</nav>
+    .trust-micro {
+      font-size: 0.8rem;
+      color: var(--mist);
+      font-weight: 600;
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-<!-- HERO MOBILE -->
-<header class="hero">
-  <div class="eyebrow">
-    <span class="tester-badge">✦ تيستر أصلي معتمد</span>
-    <span class="urgency-tag">🔥 الكمية محدودة جداً</span>
-  </div>
-  
-  <h1>عطور<br><em>كيالي</em></h1>
-  
-  <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline>
-      <source src="assets/kayali-video.mp4" type="video/mp4">
-    </video>
-  </div>
+    .trust-micro span {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+    }
 
-  <p class="hero-desc">تيسترات أصلية 100%، مستخرجة من علب كيالي الرسمية. نفس العطر — <strong>الأكثر مبيعاً بالمغرب.</strong></p>
-  
-  <div class="hero-price-wrap">
-    <div class="hero-price-old">بدلاً من 750 درهم</div>
-    <div class="hero-price-flex">
-      <div class="hero-price">349 درهم</div>
-      <div class="discount-badge">-53%</div>
-    </div>
-    <div class="hero-delivery-txt">✓ توصيل اليوم مجاني</div>
-  </div>
+    /* PROOF BAR (GRID FOR MOBILE) */
+    .proof-bar {
+      background: var(--ink2);
+      border-top: 1px solid rgba(201, 169, 110, 0.15);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+      padding: 1.5rem 5vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      position: relative;
+      z-index: 5;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
 
-  <a href="#order" class="btn-buy">✦ اطلب الآن باقتراب نفاذ الكمية</a>
-  <div class="trust-micro"><span>✔</span> الدفع عند الاستلام <span>·</span> <span>✔</span> ضمان الجودة</div>
-</header>
+    .proof-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #fff;
+      font-weight: 600;
+    }
 
-<!-- PROOF GRID MOBILE -->
-<div class="proof-bar reveal">
-  <div class="proof-item"><span class="pi-icon">✓</span><span><strong>أصلي 100%</strong></span></div>
-  <div class="proof-item proof-green"><span class="pi-icon">🚚</span><span><strong>توصيل مجاني</strong></span></div>
-  <div class="proof-item"><span class="pi-icon">💳</span><span><strong>الدفع باستلام</strong></span></div>
-  <div class="proof-item"><span class="pi-icon">🏷️</span><span><strong>349 درهم</strong> فقط</span></div>
-</div>
+    .pi-icon {
+      background: var(--gold);
+      color: var(--ink);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div class="glow-orb glow-orb-2"></div>
-  <div class="products-header reveal">
-    <span class="s-label">تشكيلتنا المختارة</span>
-    <h2 class="s-title"><em>عطورنا</em> الحصرية</h2>
-    <div class="stock-warning">⚠️ الكميات المتوفرة محدودة جدًا</div>
-  </div>
+    .proof-green {
+      color: var(--green);
+    }
 
-  <div class="prod-grid">
+    .proof-green .pi-icon {
+      background: var(--green);
+      color: #fff;
+    }
 
-    <!-- PRODUCT 1 — PISTACHIO GELATO (GREEN) -->
-    <div class="prod-card reveal">
-      <div class="bestseller-badge">🏆 الأكثر مبيعاً</div>
-      <div class="prod-img">
-        <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <img src="assets/kayali-pistachio-gelato.jpg" alt="Kayali Pistachio Gelato" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
-      </div>
-      <div class="prod-info">
-        <h3 class="prod-name">Pistachio Gelato</h3>
-        <p class="prod-notes">فستق · كراميل · فانيليا</p>
-        <div class="prod-price-area">
-          <span class="old">750 درهم</span>
-          <span class="new">349 درهم</span>
-        </div>
-        <a href="#order" class="prod-btn">✦ اطلب الآن</a>
-      </div>
-    </div>
+    /* SECTION GLOBAL */
+    section {
+      padding: 4rem 5vw;
+      position: relative;
+      z-index: 2;
+    }
 
-    <!-- PRODUCT 2 — VANILLA (YELLOW) -->
-    <div class="prod-card reveal">
-      <div class="prod-img">
-        <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <img src="assets/kayali-vanilla.jpg" alt="Kayali Vanilla" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
-      </div>
-      <div class="prod-info">
-        <h3 class="prod-name">Vanilla 28</h3>
-        <p class="prod-notes">فانيليا · سكر بني · مسك</p>
-        <div class="prod-price-area">
-          <span class="old">750 درهم</span>
-          <span class="new">349 درهم</span>
-        </div>
-        <a href="#order" class="prod-btn">✦ اطلب الآن</a>
-      </div>
-    </div>
+    .s-label {
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: inline-block;
+      font-weight: 700;
+      background: rgba(201, 169, 110, 0.1);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      text-align: center;
+      width: 100%;
+    }
 
-    <!-- PRODUCT 3 — BURNING CHERRY (RED) -->
-    <div class="prod-card reveal">
-      <div class="prod-img">
-        <span class="prod-tester-tag">✦ تيستر 100%</span>
-        <img src="assets/kayali-burning-cherry.jpg" alt="Kayali Burning Cherry" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
-      </div>
-      <div class="prod-info">
-        <h3 class="prod-name">Lovefest Burning Cherry</h3>
-        <p class="prod-notes">كرز · برالين · خشب بالو سانتو</p>
-        <div class="prod-price-area">
-          <span class="old">750 درهم</span>
-          <span class="new">349 درهم</span>
-        </div>
-        <a href="#order" class="prod-btn">✦ اطلب الآن</a>
-      </div>
-    </div>
+    .s-title {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      text-align: center;
+    }
 
-  </div>
-</section>
+    .s-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
 
-<!-- WHAT IS A TESTER -->
-<section class="tester-section" style="padding-top:3rem;">
-  <div class="reveal text-center" style="text-align:center;">
-    <span class="s-label">الشفافية الكاملة</span>
-    <h2 class="s-title">ما هو التيستر؟</h2>
-    
-    <div class="tester-points">
-      <div class="tester-point">
-        <span class="tp-icon">✓</span>
-        <div class="tp-body"><strong>نفس العطر بنسبة 100%</strong><span>تطابق مثالي في التركيبة والثبات. الفرق الوحيد هو غياب العلبة الفاخرة!</span></div>
-      </div>
-      <div class="tester-point">
-        <span class="tp-icon">✓</span>
-        <div class="tp-body"><strong>توفير هائل</strong><span>سعر المتجر 750 درهم، معنا بـ 349 درهم فقط لعطر مطابق تماماً.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    hr.divider {
+      border: none;
+      height: 2px;
+      width: 50px;
+      background: var(--gold);
+      margin: 1.2rem auto;
+    }
 
-<!-- ORDER FORM -->
-<section class="order-section" id="order">
-  <div class="order-left reveal">
-    <span class="s-label">العرض الحصري</span>
-    <h2 class="s-title">349 درهم</h2>
-    <hr class="divider">
-    <p>لا تدع الفرصة تفوتك! املأ الاستمارة الآن، <strong>وسنتصل بك فوراً</strong> لتأكيد طلبك.</p>
+    /* PRODUCTS */
+    .products {
+      background: var(--ink2);
+    }
 
-    <div class="guarantee-box">
-      <div class="guarantee g-green"><span class="g-icon">🚚</span><div>توصيل مجاني <strong>(24-48 ساعة)</strong></div></div>
-      <div class="guarantee"><span class="g-icon">💳</span><div><strong>الدفع عند الاستلام</strong> حصرياً</div></div>
-    </div>
-  </div>
+    .products-header {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  <div class="order-form reveal">
-    <h3 class="form-title">🛒 أكّد طلبك هنا</h3>
-    <p class="form-subtitle">أدخل معلوماتك الصحيحة لضمان التوصيل</p>
-    
-    <form action="thankyou.html" method="GET">
-      <div class="form-group">
-        <label for="nom">الاسم والنسب</label>
-        <input type="text" id="nom" name="nom" required>
-      </div>
-      <div class="form-group">
-        <label for="tel">رقم الهاتف</label>
-        <input type="tel" id="tel" name="tel" placeholder="مثال: 06XXXXXXXX" pattern="[0-9]{10}" maxlength="10" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
-      </div>
-      <div class="form-group">
-        <label for="ville">المدينة</label>
-        <input type="text" id="ville" name="ville" placeholder="أدخل اسم مدينتك..." required>
-      </div>
-      <div class="form-group">
-        <label for="adresse">العنوان بالكامل</label>
-        <input type="text" id="adresse" name="adresse" placeholder="اسم الحي، الشارع، رقم المنزل..." required>
-      </div>
-      <div class="form-group">
-        <label for="parfum">العطر المطلوب</label>
-        <select id="parfum" name="parfum" required>
-          <option value="Pistachio Gelato">🟢 Pistachio Gelato — 349 DH</option>
-          <option value="Vanilla 28">🟡 Vanilla 28 — 349 DH</option>
-          <option value="Burning Cherry">🔴 Burning Cherry — 349 DH</option>
-          <option value="Pack 2 parfums">🎁 Pack 2 parfums — 630 DH</option>
-        </select>
-      </div>
-      <div class="price-row">
-        <div class="price-main-row">
-          <span class="price-label">الإجمالي:</span>
-          <div class="price-amount" id="priceDisplay">349 درهم<span class="price-old">750 درهم</span></div>
-        </div>
-        <div class="price-ship-row">
-          <span class="price-ship-label">رسوم التوصيل:</span>
-          <span class="price-ship-val">مجاني 0 درهم</span>
-        </div>
-      </div>
-      <input type="hidden" name="prix" id="prixField" value="349 DH">
-      <input type="hidden" name="date" id="dateField">
-      <button type="submit" class="btn-submit" id="submitBtn">✦ تأكيد الطلب الآن</button>
-      <div class="form-secure">🔒 تدفع عند استلام الطرد حصريًا</div>
-    </form>
-  </div>
-</section>
+    .stock-warning {
+      background: rgba(230, 57, 70, 0.15);
+      color: #ff6b6b;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 1px solid rgba(230, 57, 70, 0.3);
+      margin-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">KAYALI</div>
-  <div class="footer-links">
-    <a href="#">الرئيسية</a>
-    <a href="#products">المنتجات</a>
-    <a href="#order">تأكيد الطلب</a>
-  </div>
-  <div class="footer-copy">© 2025 KAYALI TESTERS</div>
-</footer>
+    .prod-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-<!-- MOBILE STICKY BAR -->
-<div class="sticky-bar" id="stickyBar">
-  <div class="sticky-left">
-    <div class="sticky-name">كيالي — تيستر</div>
-    <div class="sticky-price">349 درهم <span>750 درهم</span></div>
-  </div>
-  <a href="#order" class="sticky-buy">اطلب الآن</a>
-</div>
+    .prod-card {
+      background: var(--ink3);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-  </svg>
-</a>
+    .prod-img {
+      aspect-ratio: 1;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
 
-<script>
-const nav = document.getElementById('nav');
-const sticky = document.getElementById('stickyBar');
-const hero = document.querySelector('.hero');
+    .bestseller-badge {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      z-index: 10;
+      font-family: 'Cairo', sans-serif;
+    }
 
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  nav.style.background = y > 30 ? 'rgba(12,11,9,0.98)' : 'rgba(12,11,9,0.9)';
-  sticky.classList.toggle('visible', y > hero.offsetHeight * 0.7);
-});
+    .prod-tester-tag {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      z-index: 10;
+      border-radius: 3px;
+    }
 
-const obs = new IntersectionObserver(
-  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-  { threshold: 0.1 }
-);
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    .prod-info {
+      padding: 1.2rem;
+      text-align: center;
+    }
 
-const sel = document.getElementById('parfum');
-const priceEl = document.getElementById('priceDisplay');
-const btn = document.getElementById('submitBtn');
+    .prod-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      color: #fff;
+    }
 
-if (sel) sel.addEventListener('change', () => {
-  const pack = sel.value === 'Pack 2 parfums';
-  priceEl.innerHTML = pack 
-    ? '630 درهم<span class="price-old">1500 درهم</span>' 
-    : '349 درهم<span class="price-old">750 درهم</span>';
-  btn.textContent = pack ? '✦ طلب باقتين 🚀' : '✦ تأكيد الطلب الآن';
-  if(document.getElementById('prixField')) {
-    document.getElementById('prixField').value = pack ? '630 DH' : '349 DH';
-  }
-});
+    .prod-notes {
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
 
-// N8N WEBHOOK INTEGRATION
-const orderForm = document.querySelector('form');
-orderForm.addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent default HTML submission
+    .prod-price-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(201, 169, 110, 0.1);
+    }
 
-  // Show loading state
-  const originalText = btn.textContent;
-  btn.textContent = 'جاري الإرسال... ⏳';
-  btn.disabled = true;
+    .prod-price-area .old {
+      font-size: 0.9rem;
+      color: var(--mist);
+      text-decoration: line-through;
+    }
 
-  document.getElementById('dateField').value = new Date().toLocaleString('fr-FR');
+    .prod-price-area .new {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
 
-  // Gather form data
-  const formData = new FormData(orderForm);
-  const data = Object.fromEntries(formData.entries());
+    .prod-btn {
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--gold);
+      border: none;
+      padding: 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 800;
+      display: block;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(201, 169, 110, 0.2);
+    }
 
-  // URL Webhook n8n
-  const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com/webhook/kayali';
+    /* TESTER EXPLAIN */
+    .tester-section {
+      background: rgba(201, 169, 110, 0.03);
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
 
-  fetch(N8N_WEBHOOK_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(() => {
-    window.location.href = 'thankyou.html';
-  })
-  .catch((error) => {
-    console.error('Erreur n8n:', error);
-    window.location.href = 'thankyou.html';
-  });
-});
+    .tester-points {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-// INITIATE CHECKOUT TRACKING
-document.querySelectorAll('a[href="#order"]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    fbq('track', 'InitiateCheckout', {
+    .tester-point {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1.2rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tp-icon {
+      background: var(--gold);
+      color: var(--ink);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .tp-body strong {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .tp-body span {
+      color: var(--dust);
+      font-size: 0.85rem;
+    }
+
+    /* ORDER FORM */
+    .order-section {
+      background: var(--ink);
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      padding-bottom: 7rem;
+    }
+
+    .order-left {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .order-left p {
+      color: var(--dust);
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      padding: 0 1rem;
+    }
+
+    .guarantee-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      padding: 1.2rem 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: right;
+    }
+
+    .guarantee {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .g-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      background: rgba(201, 169, 110, 0.1);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--gold);
+    }
+
+    .g-green .g-icon {
+      background: rgba(61, 170, 110, 0.15);
+      color: var(--green);
+    }
+
+    .order-form {
+      background: rgba(31, 29, 23, 1);
+      border: 2px solid var(--gold);
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(201, 169, 110, 0.1);
+    }
+
+    .form-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .form-subtitle {
+      font-size: 0.85rem;
+      color: var(--mist);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      border-radius: 4px;
+      outline: none;
+      appearance: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--gold);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23C9A96E' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 1rem center;
+      padding-left: 2.5rem;
+    }
+
+    .price-row {
+      padding: 1.2rem 0;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+      margin: 1.5rem 0;
+    }
+
+    .price-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .price-amount {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1;
+    }
+
+    .price-old {
+      font-size: 1rem;
+      color: var(--mist);
+      text-decoration: line-through;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .price-ship-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .price-ship-label {
+      color: var(--mist);
+      font-weight: 600;
+    }
+
+    .price-ship-val {
+      color: var(--green);
+      font-weight: 800;
+      background: rgba(61, 170, 110, 0.15);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(201, 169, 110, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    .form-secure {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--mist);
+      font-weight: 600;
+    }
+
+    /* STICKY BAR FOR MOBILE */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: var(--ink2);
+      border-top: 2px solid var(--gold);
+      padding: 0.8rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.4s;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .sticky-bar.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sticky-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .sticky-price {
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .sticky-price span {
+      font-size: 0.75rem;
+      text-decoration: line-through;
+      color: var(--mist);
+      font-weight: 600;
+    }
+
+    .sticky-buy {
+      padding: 0.8rem 1.5rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 4px;
+      animation: pulse 2s infinite;
+      white-space: nowrap;
+    }
+
+    /* WHATSAPP FLOAT BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 85px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse-wa 2s infinite;
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 2.5rem 5vw 6rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--mist);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--mist);
+      opacity: 0.5;
+    }
+
+    /* ANIMATIONS */
+    @keyframes up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(201, 169, 110, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(201, 169, 110, 0);
+      }
+    }
+
+    @keyframes pulse-red {
+      0% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(230, 57, 70, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+      }
+    }
+
+    @keyframes pulse-wa {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @keyframes shine {
+      100% {
+        left: 200%;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2056261018495811');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Kayali Testeur Original',
       value: 349,
       currency: 'MAD'
     });
-  });
-});
-</script>
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2056261018495811&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+  <div class="glow-orb glow-orb-1"></div>
+
+  <!-- NAVBAR -->
+  <nav id="nav">
+    <div class="logo">
+      <span class="logo-main">KAYALI</span>
+      <span class="logo-sub">TESTERS</span>
+    </div>
+    <a href="#order" class="nav-cta">اطلب — 349 درهم</a>
+  </nav>
+
+  <!-- HERO MOBILE -->
+  <header class="hero">
+    <div class="eyebrow">
+      <span class="tester-badge">✦ تيستر أصلي معتمد</span>
+      <span class="urgency-tag">🔥 الكمية محدودة جداً</span>
+    </div>
+
+    <h1>عطور<br><em>كيالي</em></h1>
+
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="assets/kayali-video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <p class="hero-desc">تيسترات أصلية 100%، مستخرجة من علب كيالي الرسمية. نفس العطر — <strong>الأكثر مبيعاً
+        بالمغرب.</strong></p>
+
+    <div class="hero-price-wrap">
+      <div class="hero-price-old">بدلاً من 750 درهم</div>
+      <div class="hero-price-flex">
+        <div class="hero-price">349 درهم</div>
+        <div class="discount-badge">-53%</div>
+      </div>
+      <div class="hero-delivery-txt">✓ توصيل اليوم مجاني</div>
+    </div>
+
+    <a href="#order" class="btn-buy">✦ اطلب الآن باقتراب نفاذ الكمية</a>
+    <div class="trust-micro"><span>✔</span> الدفع عند الاستلام <span>·</span> <span>✔</span> ضمان الجودة</div>
+  </header>
+
+  <!-- PROOF GRID MOBILE -->
+  <div class="proof-bar reveal">
+    <div class="proof-item"><span class="pi-icon">✓</span><span><strong>أصلي 100%</strong></span></div>
+    <div class="proof-item proof-green"><span class="pi-icon">🚚</span><span><strong>توصيل مجاني</strong></span></div>
+    <div class="proof-item"><span class="pi-icon">💳</span><span><strong>الدفع باستلام</strong></span></div>
+    <div class="proof-item"><span class="pi-icon">🏷️</span><span><strong>349 درهم</strong> فقط</span></div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="products-header reveal">
+      <span class="s-label">تشكيلتنا المختارة</span>
+      <h2 class="s-title"><em>عطورنا</em> الحصرية</h2>
+      <div class="stock-warning">⚠️ الكميات المتوفرة محدودة جدًا</div>
+    </div>
+
+    <div class="prod-grid">
+
+      <!-- PRODUCT 1 — PISTACHIO GELATO (GREEN) -->
+      <div class="prod-card reveal">
+        <div class="bestseller-badge">🏆 الأكثر مبيعاً</div>
+        <div class="prod-img">
+          <span class="prod-tester-tag">✦ تيستر 100%</span>
+          <img src="assets/kayali-pistachio-gelato.jpg" alt="Kayali Pistachio Gelato"
+            style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">Pistachio Gelato</h3>
+          <p class="prod-notes">فستق · كراميل · فانيليا</p>
+          <div class="prod-price-area">
+            <span class="old">750 درهم</span>
+            <span class="new">349 درهم</span>
+          </div>
+          <a href="#order" class="prod-btn">✦ اطلب الآن</a>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 — VANILLA (YELLOW) -->
+      <div class="prod-card reveal">
+        <div class="prod-img">
+          <span class="prod-tester-tag">✦ تيستر 100%</span>
+          <img src="assets/kayali-vanilla.jpg" alt="Kayali Vanilla"
+            style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">Vanilla 28</h3>
+          <p class="prod-notes">فانيليا · سكر بني · مسك</p>
+          <div class="prod-price-area">
+            <span class="old">750 درهم</span>
+            <span class="new">349 درهم</span>
+          </div>
+          <a href="#order" class="prod-btn">✦ اطلب الآن</a>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 — BURNING CHERRY (RED) -->
+      <div class="prod-card reveal">
+        <div class="prod-img">
+          <span class="prod-tester-tag">✦ تيستر 100%</span>
+          <img src="assets/kayali-burning-cherry.jpg" alt="Kayali Burning Cherry"
+            style="width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius: 8px 8px 0 0;">
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">Lovefest Burning Cherry</h3>
+          <p class="prod-notes">كرز · برالين · خشب بالو سانتو</p>
+          <div class="prod-price-area">
+            <span class="old">750 درهم</span>
+            <span class="new">349 درهم</span>
+          </div>
+          <a href="#order" class="prod-btn">✦ اطلب الآن</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT IS A TESTER -->
+  <section class="tester-section" style="padding-top:3rem;">
+    <div class="reveal text-center" style="text-align:center;">
+      <span class="s-label">الشفافية الكاملة</span>
+      <h2 class="s-title">ما هو التيستر؟</h2>
+
+      <div class="tester-points">
+        <div class="tester-point">
+          <span class="tp-icon">✓</span>
+          <div class="tp-body"><strong>نفس العطر بنسبة 100%</strong><span>تطابق مثالي في التركيبة والثبات. الفرق الوحيد
+              هو غياب العلبة الفاخرة!</span></div>
+        </div>
+        <div class="tester-point">
+          <span class="tp-icon">✓</span>
+          <div class="tp-body"><strong>توفير هائل</strong><span>سعر المتجر 750 درهم، معنا بـ 349 درهم فقط لعطر مطابق
+              تماماً.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="order-section" id="order">
+    <div class="order-left reveal">
+      <span class="s-label">العرض الحصري</span>
+      <h2 class="s-title">349 درهم</h2>
+      <hr class="divider">
+      <p>لا تدع الفرصة تفوتك! املأ الاستمارة الآن، <strong>وسنتصل بك فوراً</strong> لتأكيد طلبك.</p>
+
+      <div class="guarantee-box">
+        <div class="guarantee g-green"><span class="g-icon">🚚</span>
+          <div>توصيل مجاني <strong>(24-48 ساعة)</strong></div>
+        </div>
+        <div class="guarantee"><span class="g-icon">💳</span>
+          <div><strong>الدفع عند الاستلام</strong> حصرياً</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-form reveal">
+      <h3 class="form-title">🛒 أكّد طلبك هنا</h3>
+      <p class="form-subtitle">أدخل معلوماتك الصحيحة لضمان التوصيل</p>
+
+      <form action="thankyou.html" method="GET">
+        <div class="form-group">
+          <label for="nom">الاسم والنسب</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="tel">رقم الهاتف</label>
+          <input type="tel" id="tel" name="tel" placeholder="مثال: 06XXXXXXXX" pattern="[0-9]{10}" maxlength="10"
+            inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+        <div class="form-group">
+          <label for="ville">المدينة</label>
+          <input type="text" id="ville" name="ville" placeholder="أدخل اسم مدينتك..." required>
+        </div>
+        <div class="form-group">
+          <label for="adresse">العنوان بالكامل</label>
+          <input type="text" id="adresse" name="adresse" placeholder="اسم الحي، الشارع، رقم المنزل..." required>
+        </div>
+        <div class="form-group">
+          <label for="parfum">العطر المطلوب</label>
+          <select id="parfum" name="parfum" required>
+            <option value="Pistachio Gelato">🟢 Pistachio Gelato — 349 DH</option>
+            <option value="Vanilla 28">🟡 Vanilla 28 — 349 DH</option>
+            <option value="Burning Cherry">🔴 Burning Cherry — 349 DH</option>
+            <option value="Pack 2 parfums">🎁 Pack 2 parfums — 630 DH</option>
+          </select>
+        </div>
+        <div class="price-row">
+          <div class="price-main-row">
+            <span class="price-label">الإجمالي:</span>
+            <div class="price-amount" id="priceDisplay">349 درهم<span class="price-old">750 درهم</span></div>
+          </div>
+          <div class="price-ship-row">
+            <span class="price-ship-label">رسوم التوصيل:</span>
+            <span class="price-ship-val">مجاني 0 درهم</span>
+          </div>
+        </div>
+        <input type="hidden" name="prix" id="prixField" value="349 DH">
+        <input type="hidden" name="date" id="dateField">
+        <button type="submit" class="btn-submit" id="submitBtn">✦ تأكيد الطلب الآن</button>
+        <div class="form-secure">🔒 تدفع عند استلام الطرد حصريًا</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">KAYALI</div>
+    <div class="footer-links">
+      <a href="#">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#order">تأكيد الطلب</a>
+    </div>
+    <div class="footer-copy">© 2025 KAYALI TESTERS</div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-left">
+      <div class="sticky-name">كيالي — تيستر</div>
+      <div class="sticky-price">349 درهم <span>750 درهم</span></div>
+    </div>
+    <a href="#order" class="sticky-buy">اطلب الآن</a>
+  </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const sticky = document.getElementById('stickyBar');
+    const hero = document.querySelector('.hero');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.style.background = y > 30 ? 'rgba(12,11,9,0.98)' : 'rgba(12,11,9,0.9)';
+      sticky.classList.toggle('visible', y > hero.offsetHeight * 0.7);
+    });
+
+    const obs = new IntersectionObserver(
+      es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    const sel = document.getElementById('parfum');
+    const priceEl = document.getElementById('priceDisplay');
+    const btn = document.getElementById('submitBtn');
+
+    if (sel) sel.addEventListener('change', () => {
+      const pack = sel.value === 'Pack 2 parfums';
+      priceEl.innerHTML = pack
+        ? '630 درهم<span class="price-old">1500 درهم</span>'
+        : '349 درهم<span class="price-old">750 درهم</span>';
+      btn.textContent = pack ? '✦ طلب باقتين 🚀' : '✦ تأكيد الطلب الآن';
+      if (document.getElementById('prixField')) {
+        document.getElementById('prixField').value = pack ? '630 DH' : '349 DH';
+      }
+    });
+
+    // N8N WEBHOOK INTEGRATION
+    const orderForm = document.querySelector('form');
+    orderForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent default HTML submission
+
+      // Show loading state
+      const originalText = btn.textContent;
+      btn.textContent = 'جاري الإرسال... ⏳';
+      btn.disabled = true;
+
+      document.getElementById('dateField').value = new Date().toLocaleString('fr-FR');
+
+      // Gather form data
+      const formData = new FormData(orderForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // URL Webhook n8n
+      const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com/webhook/kayali';
+
+      fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(() => {
+          // ✅ REDICTION VERS THANKYOU.HTML UNE FOIS LES DONNÉES ENVOYÉES
+          window.location.href = 'thankyou.html';
+        })
+        .catch((error) => {
+          console.error('Erreur n8n:', error);
+          // En cas d'erreur de connexion, on redirige quand même le client pour ne pas le bloquer
+          window.location.href = 'thankyou.html';
+        });
+    });
+
+    // INITIATE CHECKOUT TRACKING
+    document.querySelectorAll('a[href="#order"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        fbq('track', 'InitiateCheckout', {
+          value: 349,
+          currency: 'MAD'
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
