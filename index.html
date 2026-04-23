@@ -34,6 +34,7 @@
 
     html {
       scroll-behavior: smooth;
+      background: #050505;
     }
 
     body {
@@ -42,6 +43,11 @@
       font-family: 'Cairo', sans-serif;
       font-weight: 400;
       overflow-x: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     }
 
     /* GLOWS */
@@ -71,13 +77,15 @@
     nav {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
       z-index: 200;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 5vw;
+      padding: 1rem 20px;
       transition: all 0.5s;
       background: rgba(12, 11, 9, 0.95);
       backdrop-filter: blur(10px);
@@ -126,7 +134,7 @@
 
     /* HERO - MOBILE OPTIMIZED */
     .hero {
-      padding: 6.5rem 5vw 3rem;
+      padding: 6.5rem 20px 3rem;
       position: relative;
       text-align: center;
       display: flex;
@@ -333,7 +341,7 @@
       background: var(--ink2);
       border-top: 1px solid rgba(201, 169, 110, 0.15);
       border-bottom: 1px solid rgba(201, 169, 110, 0.15);
-      padding: 1.5rem 5vw;
+      padding: 1.5rem 20px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
@@ -377,7 +385,7 @@
 
     /* SECTION GLOBAL */
     section {
-      padding: 4rem 5vw;
+      padding: 4rem 20px;
       position: relative;
       z-index: 2;
     }
@@ -805,67 +813,7 @@
       font-weight: 600;
     }
 
-    /* STICKY BAR FOR MOBILE */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
-      background: var(--ink2);
-      border-top: 2px solid var(--gold);
-      padding: 0.8rem 5vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transform: translateY(100%);
-      transition: transform 0.4s;
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .sticky-bar.visible {
-      transform: translateY(0);
-    }
-
-    .sticky-left {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sticky-name {
-      font-family: 'Amiri', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .sticky-price {
-      font-size: 1.1rem;
-      color: var(--gold-light);
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .sticky-price span {
-      font-size: 0.75rem;
-      text-decoration: line-through;
-      color: var(--mist);
-      font-weight: 600;
-    }
-
-    .sticky-buy {
-      padding: 0.8rem 1.5rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-size: 1rem;
-      font-weight: 800;
-      text-decoration: none;
-      border-radius: 4px;
-      animation: pulse 2s infinite;
-      white-space: nowrap;
-    }
+    /* STICKY BAR REMOVED */
 
     /* WHATSAPP FLOAT BUTTON */
     .whatsapp-float {
@@ -894,7 +842,7 @@
     /* FOOTER */
     footer {
       background: #000;
-      padding: 2.5rem 5vw 6rem;
+      padding: 2.5rem 20px 6rem;
       text-align: center;
     }
 
@@ -1256,14 +1204,7 @@
     <div class="footer-copy">© 2025 KAYALI TESTERS</div>
   </footer>
 
-  <!-- MOBILE STICKY BAR -->
-  <div class="sticky-bar" id="stickyBar">
-    <div class="sticky-left">
-      <div class="sticky-name">كيالي — تيستر</div>
-      <div class="sticky-price">349 درهم <span>750 درهم</span></div>
-    </div>
-    <a href="#order" class="sticky-buy">اطلب الآن</a>
-  </div>
+  <!-- MOBILE STICKY BAR REMOVED -->
 
   <!-- WHATSAPP FLOATING BUTTON -->
   <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
@@ -1275,13 +1216,11 @@
 
   <script>
     const nav = document.getElementById('nav');
-    const sticky = document.getElementById('stickyBar');
     const hero = document.querySelector('.hero');
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       nav.style.background = y > 30 ? 'rgba(12,11,9,0.98)' : 'rgba(12,11,9,0.9)';
-      sticky.classList.toggle('visible', y > hero.offsetHeight * 0.7);
     });
 
     const obs = new IntersectionObserver(
