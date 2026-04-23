@@ -1260,27 +1260,24 @@
       const formData = new FormData(orderForm);
       const data = Object.fromEntries(formData.entries());
 
-      // URLs Webhook
+      // URL Webhook n8n
       const N8N_WEBHOOK_URL = 'https://kayali.spaincentral.cloudapp.azure.com/webhook/kayali';
-      const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxzkP_VtH-Qd-RO5denZksxUcSL20mqlzWrjbCmX8x8HjkhIv3VnY0JOZnb49aPU6tsOA/exec';
 
-      const n8nRequest = fetch(N8N_WEBHOOK_URL, {
+      fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify(data)
-      });
-
-      const sheetRequest = fetch(GOOGLE_SHEET_URL, {
-        method: 'POST',
-        body: new FormData(orderForm)
-      });
-
-      Promise.allSettled([n8nRequest, sheetRequest])
+      })
         .then(() => {
           // ✅ REDICTION VERS THANKYOU.HTML UNE FOIS LES DONNÉES ENVOYÉES
+          window.location.href = 'thankyou.html';
+        })
+        .catch((error) => {
+          console.error('Erreur n8n:', error);
+          // En cas d'erreur de connexion, on redirige quand même le client pour ne pas le bloquer
           window.location.href = 'thankyou.html';
         });
     });
